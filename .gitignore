@@ -2,3 +2,5 @@ simbold/
 simbc/simbc
 simbc/client.o
 simbc/client_screen.o
+simbser/server
+simbser/server.o
