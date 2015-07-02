@@ -1,1 +1,4 @@
 simbold/
+simbc/simbc
+simbc/client.o
+simbc/client_screen.o
