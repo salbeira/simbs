@@ -8,6 +8,11 @@ struct sockaddr_in g_server_addr;
 extern int g_max_rows;
 extern int g_max_cols;
 
+void error(const char *a)
+{
+
+}
+
 void cancel(int signal)
 {
 	if(SIGINT == signal)
@@ -104,7 +109,8 @@ int main(int argc, char **argv)
 	init_connection();
 	init_signalhandler();
 	pthread_t rec, in;
-	pthread_create(&rec, NULL, &client_receiver, NULL);
+	if(pthread_create(&rec, NULL, &client_receiver, NULL))
+		error("pthread_create");
 	pthread_create(&in, NULL, &client_input, NULL);
 	pthread_join(rec, NULL);
 	pthread_join(in, NULL);

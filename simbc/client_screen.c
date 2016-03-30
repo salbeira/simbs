@@ -75,7 +75,7 @@ int screen_in_input()
 			g_input_buffer[--buf_pos] = 0;
 		return 0;
 	}
-	if(in == '|')
+	if(in == 27)
 	{
 		endwin();
 		exit(EXIT_SUCCESS);
